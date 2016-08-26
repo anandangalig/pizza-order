@@ -20,20 +20,28 @@
               <option value="large">Large</option>
         </select>
       <hr>
-        <label for="pizzaToppings">Step 2: Choose your Meats ($3 each):</label><br>
-        <input type="checkbox" name="pizzaToppings" value="meat"> Pepperoni<br>
-        <input type="checkbox" name="pizzaToppings" value="meat"> Italian Sausage<br>
-        <input type="checkbox" name="pizzaToppings" value="meat"> Canadian Bacon<br>
-        <input type="checkbox" name="pizzaToppings" value="meat"> Anchovies<br>
-      <hr>
-        <label for="pizzaToppings">Step 3: Choose your Veggies ($2 each):</label><br>
-        <input type="checkbox" name="pizzaToppings" value="veggies"> Bell Peppers<br>
-        <input type="checkbox" name="pizzaToppings" value="veggies"> Mushrooms<br>
-        <input type="checkbox" name="pizzaToppings" value="veggies"> Olives<br>
-        <input type="checkbox" name="pizzaToppings" value="veggies"> Artichoke<br>
-        <input type="checkbox" name="pizzaToppings" value="veggies"> Basil<br>
-        <input type="checkbox" name="pizzaToppings" value="veggies"> Sun Dried Tomatoes<br>
+        <div class="toppings"
+          <label for="pizzaToppings">Step 2: Choose your Meats ($3 each):</label><br>
+          <input id="pepperoni" type="checkbox" name="pizzaToppings" value="meat"> Pepperoni<br>
+          <input id="italianSausage" type="checkbox" name="pizzaToppings" value="meat"> Italian Sausage<br>
+          <input id="canadianBacon" type="checkbox" name="pizzaToppings" value="meat"> Canadian Bacon<br>
+          <input id="anchovies" type="checkbox" name="pizzaToppings" value="meat"> Anchovies<br>
+        <hr>
+          <label for="pizzaToppings">Step 3: Choose your Veggies ($2 each):</label><br>
+          <input id="bellPeppers" type="checkbox" name="pizzaToppings" value="veggies"> Bell Peppers<br>
+          <input id="mushrooms" type="checkbox" name="pizzaToppings" value="veggies"> Mushrooms<br>
+          <input id="olives" type="checkbox" name="pizzaToppings" value="veggies"> Olives<br>
+          <input id="artichoke" type="checkbox" name="pizzaToppings" value="veggies"> Artichoke<br>
+          <input id="basil" type="checkbox" name="pizzaToppings" value="veggies"> Basil<br>
+          <input id="sunDriedTomatoes" type="checkbox" name="pizzaToppings" value="veggies"> Sun Dried Tomatoes<br>
+          <br>
+          <button type="submit" class="btn btn-lg btn-success">Place Your Order</button>
+        </div>
       </form>
+      <div id="totalDisplay">
+        <h2>Your order total is: $<span id="orderTotal"></span></h2>
+        <img src="img/pizza.jpg">
+      </div>
     </div>
   </body>
 </html>
