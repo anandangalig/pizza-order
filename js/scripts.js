@@ -1,11 +1,11 @@
 //BACK END LOGIC
-function Pizza(size) {
-  this.size = size;
-  this.toppings = [];
+function Pizza(inputSizeValue, inputToppings) {
+  this.size = inputSizeValue;
+  this.toppings = inputToppings;
 };
 
 Pizza.prototype.pizzaTotal = function() {
-  var total = 0;
+  var total = 5;
   if (this.size === "small") {
     total += 0;
   } else if (this.size === "medium") {
@@ -13,11 +13,12 @@ Pizza.prototype.pizzaTotal = function() {
   } else if (this.size === "large") {
     total += 4;
   };
-
-  if (this.toppings === "meat") {
-    total += 3;
-  } else if (this.toppings === "veggies") {
-    total += 2;
+  for(index = 0; index < this.toppings.length; index++) {
+    if (this.toppings[index] === "meat") {
+      total += 3;
+    } else if (this.toppings[index] === "veggies") {
+      total += 2;
+    }
   };
   $("#totalDisplay").show();
   $("#orderTotal").text(total);
@@ -29,56 +30,46 @@ Pizza.prototype.pizzaTotal = function() {
 $(document).ready(function() {
   $("form#userInput").submit(function(event){
     event.preventDefault();
-    debugger;
+    // debugger;
 
+    var newToppings = [];
     var newSize = $("#pizzaSize").val();
+
+    if (document.getElementById('pepperoni').checked) {
+      newToppings.push("meat")
+    };
+    if (document.getElementById('italianSausage').checked) {
+      newToppings.push("meat")
+    };
+    if (document.getElementById('canadianBacon').checked) {
+      newToppings.push("meat")
+    };
+    if (document.getElementById('anchovies').checked) {
+      newToppings.push("meat")
+    };
+    if (document.getElementById('bellPeppers').checked) {
+      newToppings.push("veggies")
+    };
+    if (document.getElementById('olives').checked) {
+      newToppings.push("veggies")
+    };
+    if (document.getElementById('artichoke').checked) {
+      newToppings.push("veggies")
+    };
+    if (document.getElementById('basil').checked) {
+      newToppings.push("veggies")
+    };
+    if (document.getElementById('sunDriedTomatoes').checked) {
+      newToppings.push("veggies")
+    };
+    if (document.getElementById('mushrooms').checked) {
+      newToppings.push("veggies")
+    };
     var newPizzaOrder = new Pizza(newSize, newToppings);
 
     // TRYING TO MAKE IT WORK WITH AN ARRAY AND TARGETING EACH CHECKBOX TO GET THE VALUE:
 
-    var newToppings = [];
-
-    if (document.getElementById('pepperoni').checked) {
-      var topping1 = $("#pepperoni").val()
-      newToppings.push(topping1)
-    };
-    if (document.getElementById('italianSausage').checked) {
-      var topping2 = $("#italianSausage").val()
-      newToppings.push(topping2)
-    };
-    if (document.getElementById('italianSausage').checked) {
-      var topping3 = $("#italianSausage").val()
-      newToppings.push(topping3)
-    };
-    if (document.getElementById('anchovies').checked) {
-      var topping4 = $("#anchovies").val()
-      newToppings.push(topping4)
-    };
-    if (document.getElementById('bellPeppers').checked) {
-      var topping5 = $("#bellPeppers").val()
-      newToppings.push(topping5)
-    };
-    if (document.getElementById('olives').checked) {
-      var topping6 = $("#olives").val()
-      newToppings.push(topping6)
-    };
-    if (document.getElementById('artichoke').checked) {
-      var topping7 = $("#artichoke").val()
-      newToppings.push(topping7)
-    };
-    if (document.getElementById('basil').checked) {
-      var topping8 = $("#basil").val()
-      newToppings.push(topping8)
-    };
-    if (document.getElementById('sunDriedTomatoes').checked) {
-      var topping9 = $("#sunDriedTomatoes").val()
-      newToppings.push(topping9)
-    };
-    if (document.getElementById('mushrooms').checked) {
-      var topping10 = $("#mushrooms").val()
-      newToppings.push(topping10)
-    };
-
+    console.log(newToppings);
     newPizzaOrder.pizzaTotal();
 
   });
