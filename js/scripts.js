@@ -12,17 +12,16 @@ Pizza.prototype.pizzaTotal = function() {
     total += 2;
   } else if (this.size === "large") {
     total += 4;
-  return total;
   };
 
   if (this.toppings === "meat") {
     total += 3;
   } else if (this.toppings === "veggies") {
     total += 2;
-  return total;
   };
   $("#totalDisplay").show();
   $("#orderTotal").text(total);
+  return total;
 
 };
 
@@ -30,10 +29,10 @@ Pizza.prototype.pizzaTotal = function() {
 $(document).ready(function() {
   $("form#userInput").submit(function(event){
     event.preventDefault();
+    debugger;
 
-
-    var newPizzaOrder = new Pizza(newSize, newToppings )
-    var newSize = $("#pizzaSize").val()
+    var newSize = $("#pizzaSize").val();
+    var newPizzaOrder = new Pizza(newSize, newToppings);
 
     // TRYING TO MAKE IT WORK WITH AN ARRAY AND TARGETING EACH CHECKBOX TO GET THE VALUE:
 
@@ -80,7 +79,7 @@ $(document).ready(function() {
       newToppings.push(topping10)
     };
 
-    newPizzaOrder.pizzaTotal()
+    newPizzaOrder.pizzaTotal();
 
   });
 });
