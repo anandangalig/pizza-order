@@ -1,7 +1,7 @@
 //BACK END LOGIC
 function Pizza(inputSizeValue, inputToppings) {
   this.size = inputSizeValue;
-  this.toppings = inputToppings;
+  this.toppings = inputToppings; //this was an array orignally=bad. Instead, it needs to match the parameters in the constructor!
 };
 
 Pizza.prototype.pizzaTotal = function() {
@@ -13,16 +13,16 @@ Pizza.prototype.pizzaTotal = function() {
   } else if (this.size === "large") {
     total += 4;
   };
-  for(index = 0; index < this.toppings.length; index++) {
+  for(index = 0; index < this.toppings.length; index++) { //.length is used on this.toppings because this is the Back-End logic designed to be called on anything. And .toppings is specified because thats what we are interested in. Just 'this' whould be the whole pizza.
     if (this.toppings[index] === "meat") {
       total += 3;
-    } else if (this.toppings[index] === "veggies") {
+    } else if (this.toppings[index] === "veggies") { // using 'this.toppings[index]' to grab the value at [index] position within the array.
       total += 2;
     }
   };
   $("#totalDisplay").show();
   $("#orderTotal").text(total);
-  return total;
+  return total; //return needs to be placed at the VERY end, for it will stop and return as soon as it encounters it. Nothing after it will run!
 
 };
 
@@ -35,7 +35,7 @@ $(document).ready(function() {
     var newToppings = [];
     var newSize = $("#pizzaSize").val();
 
-    if (document.getElementById('pepperoni').checked) {
+    if (document.getElementById('pepperoni').checked) { // orignally was grabbing the value var topping = document.getElementById("pepperoni").val(); and pushing the value into the array. But this was unnecessary, for as long as the Checkbox was checked, I can push any value into the array (e.g. 'meat').
       newToppings.push("meat")
     };
     if (document.getElementById('italianSausage').checked) {
@@ -65,12 +65,10 @@ $(document).ready(function() {
     if (document.getElementById('mushrooms').checked) {
       newToppings.push("veggies")
     };
-    var newPizzaOrder = new Pizza(newSize, newToppings);
-
-    // TRYING TO MAKE IT WORK WITH AN ARRAY AND TARGETING EACH CHECKBOX TO GET THE VALUE:
+    var newPizzaOrder = new Pizza(newSize, newToppings); // this Instance is created AFTER the values has been declared and found. And only then it will work using them. ORDER MATTERS!
 
     console.log(newToppings);
-    newPizzaOrder.pizzaTotal();
+    newPizzaOrder.pizzaTotal(); // Same idea: Order Matters here to run the calculation only after everything is defined and values grabbed. 
 
   });
 });
