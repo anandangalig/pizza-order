@@ -12,7 +12,10 @@ Pizza.prototype.pizzaTotal = function() {
     total += 2;
   } else if (this.size === "large") {
     total += 4;
-  };
+  } else {
+    alert("Please choose the size of your Pizza and try again!")
+    .html("")
+  }
   for(index = 0; index < this.toppings.length; index++) { //.length is used on this.toppings because this is the Back-End logic designed to be called on anything. And .toppings is specified because thats what we are interested in. Just 'this' whould be the whole pizza.
     if (this.toppings[index] === "meat") {
       total += 3;
@@ -20,7 +23,6 @@ Pizza.prototype.pizzaTotal = function() {
       total += 2;
     }
   };
-  $("#totalDisplay").show();
   $("#orderTotal").text(total);
   return total; //return needs to be placed at the VERY end, for it will stop and return as soon as it encounters it. Nothing after it will run!
 
@@ -68,7 +70,9 @@ $(document).ready(function() {
     var newPizzaOrder = new Pizza(newSize, newToppings); // this Instance is created AFTER the values has been declared and found. And only then it will work using them. ORDER MATTERS!
 
     console.log(newToppings);
-    newPizzaOrder.pizzaTotal(); // Same idea: Order Matters here to run the calculation only after everything is defined and values grabbed. 
+    newPizzaOrder.pizzaTotal(); // Same idea: Order Matters here to run the calculation only after everything is defined and values grabbed.
+    $("#totalDisplay").show();
+
 
   });
 });

@@ -4,3 +4,7 @@ img {
   height: auto;
   border-radius: 10%;
 }
+
+#totalDisplay {
+  display: none;
+}
