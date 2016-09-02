@@ -36,10 +36,15 @@ _Please contact me at anandangalig@gmail.com with any feedback_
 * _Behavior: If user selects size Medium with Veggie toppings only, the total will be increased by $2 per selection._
   * _Input: Size: Medium; Toppings: Mushrooms_
   * _Output: Your Order Total is: $9_
-* _Behavior: If user selects size Medium with both Meat and Veggie toppings, the total will be increased by $3 and $2 per selection respectively._
+* _Behavior: If user selects size Medium with both Meat and Veggie toppings, the total will include $3 and $2 per selection respectively, plus $7 for the Medium size._
   * _Input: Size: Medium; Toppings: Pepperoni, Mushrooms_
   * _Output: Your Order Total is: $12_
-
+* _Behavior: If user selects size Large with both Meat and Veggie toppings, the total will include $3 and $2 per selection respectively, plus $9 for the Large size._
+  * _Input: Size: Large; Toppings: Pepperoni, Mushrooms_
+  * _Output: Your Order Total is: $14_
+* _Behavior: If user selects size Small with both Meat and Veggie toppings, the total will include $3 and $2 per selection respectively, plus $5 for the Small size._
+  * _Input: Size: Small; Toppings: Pepperoni, Mushrooms_
+  * _Output: Your Order Total is: $10_
 
 ### License
 
