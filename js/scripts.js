@@ -1,7 +1,7 @@
 //BACK END LOGIC
 function Pizza(inputSizeValue, inputToppings) {
   this.size = inputSizeValue;
-  this.toppings = inputToppings; //this was an array orignally=bad. Instead, it needs to match the parameters in the constructor!
+  this.toppings = inputToppings; 
 };
 
 Pizza.prototype.pizzaTotal = function() {
@@ -32,12 +32,11 @@ Pizza.prototype.pizzaTotal = function() {
 $(document).ready(function() {
   $("form#userInput").submit(function(event){
     event.preventDefault();
-    // debugger;
 
     var newToppings = [];
     var newSize = $("#pizzaSize").val();
 
-    if (document.getElementById('pepperoni').checked) { // orignally was grabbing the value var topping = document.getElementById("pepperoni").val(); and pushing the value into the array. But this was unnecessary, for as long as the Checkbox was checked, I can push any value into the array (e.g. 'meat').
+    if (document.getElementById('pepperoni').checked) {
       newToppings.push("meat")
     };
     if (document.getElementById('italianSausage').checked) {
@@ -68,8 +67,6 @@ $(document).ready(function() {
       newToppings.push("veggies")
     };
     var newPizzaOrder = new Pizza(newSize, newToppings); // this Instance is created AFTER the values has been declared and found. And only then it will work using them. ORDER MATTERS!
-
-    console.log(newToppings);
     newPizzaOrder.pizzaTotal(); // Same idea: Order Matters here to run the calculation only after everything is defined and values grabbed.
     $("#totalDisplay").show();
 
