@@ -14,6 +14,9 @@ _Users will be able to pick the size and the toppings of the pizza and the progr
 * _Go to https://github.com/anandangalig/pizza-order.git and clone this repository onto your local machine._
 * _To see the code, open the cloned repository in your favorite text editor._
 
+## To see the hosted app without cloning the repository
+* _Go to https://anandangalig.github.io/pizza-order/_
+
 ## Known Bugs
 
 _It is lacking the functionality to order multiple orders of pizzas at the same time._
