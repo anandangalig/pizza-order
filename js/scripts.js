@@ -76,36 +76,6 @@ $(document).ready(function() {
 
   });
 });
-    // $(".toppings").each(function () {
-    //   var topping1 = $(this).find("#pepperoni").val();
-    //   var topping2 = $(this).find("#italianSausage").val();
-    //   var topping3 = $(this).find("#canadianBacon").val();
-    //   var topping4 = $(this).find("#anchovies").val();
-    //   var topping5 = $(this).find("#bellPeppers").val();
-    //   var topping6 = $(this).find("#mushrooms").val();
-    //   var topping7 = $(this).find("#olives").val();
-    //   var topping8 = $(this).find("#artichoke").val();
-    //   var topping9 = $(this).find("#basil").val();
-    //   var topping10 = $(this).find("#sunDriedTomatoes").val();
-    //
-    //   var toppingSelection = new Pizza(topping1, topping2, topping3, topping4, topping5, topping6, topping7, topping8, topping9, topping10);
-    //
 
 
 
-
-    // TRYING TO MAKE IT WORK WITH getElementById TO TARGET SPECIFIC ID'S:
-
-    // var topping = document.getElementById("pepperoni").value;
-    // var topping = document.getElementById("italianSausage").value;
-    // var topping = document.getElementById("canadianBacon").value;
-    // var topping = document.getElementById("anchovies").value;
-    // var topping = document.getElementById("bellPeppers").value;
-    // var topping = document.getElementById("mushrooms").value;
-    // var topping = document.getElementById("artichoke").value;
-    // var topping = document.getElementById("basil").value;
-    // var topping = document.getElementById("sunDriedTomatoes").value;
-    // var topping = document.getElementById("pepperoni").value;
-    //var toppings = document.getElementById('toppings').checked;
-    //var toppings = $(".toppings:checked").val();
-    //var toppings = document.getElementsByClassName("toppings").val();
